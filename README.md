@@ -4,10 +4,10 @@
 ### AIM:
 To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
 
-### Equipments Required:
+### Components Required:
 Hardware – PCs, Cyclone II , USB flasher
 Software – Quartus prime
-Theory
+### Theory
 Adders are digital circuits that carry out addition of numbers.
 
 ### Half Adder
@@ -34,21 +34,55 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
+
+### Program:
+```
+
 Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
+Developed by: Dharmaraj S
+RegisterNumber: 212222240025
+```
+```
+HALFADDER:
 
-### Output:
-### RTL
-### TIMING DIAGRAM
+module HalfAdder(A,B,sum,carry);
+input A,B;
+output sum,carry;
+assign sum= A^B;
+assign carry = A&B;
+endmodule
+```
+```
+FULLADDER:
 
+module FullAdder(A,B,Cin,sum,carry);
+input A,B,Cin;
+output sum,carry;
+assign sum= A^B^Cin;
+assign carry = (A&B)|((A^B)&Cin);
+endmodule
+```
+### RTL diagram:
+## HALFADDER
+![halfadder rtl](https://github.com/dharmaraj-007/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119560386/e155a801-584d-4a15-9b91-8f1ecca8ef00)
 
-### TRUTH TABLE 
+## FULLADDER
+![fulladder rtl](https://github.com/dharmaraj-007/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119560386/90cd7962-ca35-4edf-9beb-1bb734795666)
+
+### Truth table:
+## HALFADDER
+![halfadder tt](https://github.com/dharmaraj-007/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119560386/c1aa8dce-da04-4922-a2cd-488306bbc1ae)
+
+## FULLADDER
+![fulladder tt](https://github.com/dharmaraj-007/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119560386/d0c37dc4-2410-4693-98d7-823b6ff39a3c)
+
+### Output waveform:
+## HALFADDER
+![halfadder wave](https://github.com/dharmaraj-007/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119560386/325cc8a1-c722-413b-9eb6-062416238f3f)
+
+## FULLADDER
+![fulladder wave](https://github.com/dharmaraj-007/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119560386/be9cd3b0-159d-4c87-8c04-2281b36db04b)
+ 
 
 ### Result:
+Thus, a half adder and full adder circuit is designed to verify its truth table in Quartus using Verilog programming.
